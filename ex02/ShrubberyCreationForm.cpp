@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ShrubberyCreationForm.cpp                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/06/15 11:17:00 by yrabby            #+#    #+#             */
+/*   Updated: 2023/06/15 11:36:10 by yrabby           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ShrubberyCreationForm.hpp"
 
 /*
@@ -33,21 +45,58 @@ ShrubberyCreationForm &				ShrubberyCreationForm::operator=( ShrubberyCreationFo
 	return *this;
 }
 
-std::ostream &			operator<<( std::ostream & o, ShrubberyCreationForm const & i )
-{
-	AForm const *a = &i;
-	o << a;
-	return o;
-}
-
 /*
 ** --------------------------------- METHODS ----------------------------------
 */
+
+std::string	ShrubberyCreationForm::_getTree(void) const
+{
+	return "	                                                         .\n\
+                                              .         ;  \n\
+                 .              .              ;%     ;;   \n\
+                   ,           ,                :;%  %;   \n\
+                    :         ;                   :;%;'     .,   \n\
+           ,.        %;     %;            ;        %;'    ,;\n\
+             ;       ;%;  %%;        ,     %;    ;%;    ,%'\n\
+              %;       %;%;      ,  ;       %;  ;%;   ,%;' \n\
+               ;%;      %;        ;%;        % ;%;  ,%;'\n\
+                `%;.     ;%;     %;'         `;%%;.%;'\n\
+                 `:;%.    ;%%. %@;        %; ;@%;%'\n\
+                    `:%;.  :;bd%;          %;@%;'\n\
+                      `@%:.  :;%.         ;@@%;'   \n\
+                        `@%.  `;@%.      ;@@%;         \n\
+                          `@%%. `@%%    ;@@%;        \n\
+                            ;@%. :@%%  %@@%;       \n\
+                              %@bd%%%bd%%:;     \n\
+                                #@%%%%%:;;\n\
+                                %@@%%%::;\n\
+                                %@@@%(o);  . '         \n\
+                                %@@@o%;:(.,'         \n\
+                            `.. %@@@o%::;         \n\
+                               `)@@@o%::;         \n\
+                                %@@(o)::;        \n\
+                               .%@@@@%::;         \n\
+                               ;%@@@@%::;.          \n\
+                              ;%@@@@%%:;;;. \n\
+                          ...;%@@@@@%%:;;;;,.. ";
+}
 
 void		ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 {
 	_canExecForm(executor);
 
+	std::string file_name(executor.getName() + "_shrubbery");
+	try
+	{
+		std::ofstream MyFile(file_name.c_str());
+
+		MyFile << _getTree() << std::endl;
+		MyFile.close();
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
 }
 
 /*

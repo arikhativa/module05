@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/15 10:57:51 by yrabby            #+#    #+#             */
-/*   Updated: 2023/06/15 10:59:04 by yrabby           ###   ########.fr       */
+/*   Updated: 2023/06/15 11:35:02 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <iostream>
 # include <string>
+# include <fstream>
 
 # include "AForm.hpp"
 
@@ -30,8 +31,8 @@ class ShrubberyCreationForm : public AForm
 		ShrubberyCreationForm( ShrubberyCreationForm const & src );
 		ShrubberyCreationForm &		operator=( ShrubberyCreationForm const & rhs );
 
-};
+		std::string	_getTree(void) const;
 
-std::ostream &			operator<<( std::ostream & o, ShrubberyCreationForm const & i );
+};
 
 #endif /* ******************************************* SHRUBBERYCREATIONFORM_H */

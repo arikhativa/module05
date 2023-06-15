@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/15 09:33:53 by yrabby            #+#    #+#             */
-/*   Updated: 2023/06/15 09:57:44 by yrabby           ###   ########.fr       */
+/*   Updated: 2023/06/15 11:24:25 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,7 +101,7 @@ void	AForm::_canExecForm(const Bureaucrat &bureaucrat) const
 {
 	if (bureaucrat.getGrade() > getGradeToExecute())
 		throw GradeTooLowException();
-	if (!getSigned)
+	if (!getSigned())
 		throw FormNotSignedException();
 }
 

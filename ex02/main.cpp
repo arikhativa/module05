@@ -6,50 +6,41 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/12 10:45:46 by yrabby            #+#    #+#             */
-/*   Updated: 2023/06/14 15:38:55 by yrabby           ###   ########.fr       */
+/*   Updated: 2023/06/15 11:40:13 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "AForm.hpp"
+#include "ShrubberyCreationForm.hpp"
 
-void	simple()
+void	Shrubbery()
 {
-	Bureaucrat	b1("Bob", 1);
-	Form		f1("c137", 1, 1);
+	{
+		Bureaucrat	b1("Bob[1]", 1);
+		Bureaucrat	b2("Yoni[150]", 150);
+		Bureaucrat	b3("Oded[145]", 145);
+		ShrubberyCreationForm f1;
 
-	std::cout << b1 << ", is working with " << f1 << std::endl;
+		std::cout << f1 << std::endl;
 
-	b1.signForm(f1);
-	b1.decrementGrade();
-	std::cout << b1 << ", lost some grade " << std::endl;
-	std::cout << b1 << ", is working with " << f1 << std::endl;
-	b1.signForm(f1);
-}
+		b1.executeForm(f1);
+		std::cout << b1 << std::endl;
+		b1.signForm(f1);
+		b1.executeForm(f1);
 
-void	except()
-{
-	try
-	{
-		Form		f1("except", 0, 1);
-	}
-	catch (Form::GradeTooHighException &e)
-	{
-		std::cerr << e.what() << std::endl;
-	}
-	try
-	{
-		Form b1("151", 1, 151);
-	}
-	catch (Form::GradeTooLowException &e)
-	{
-		std::cerr << e.what() << std::endl;
+		std::cout << b2 << std::endl;
+		b2.signForm(f1);
+		b2.executeForm(f1);
+
+		std::cout << b3 << std::endl;
+		b3.signForm(f1);
+		b3.executeForm(f1);
 	}
 }
 
 int main( void )
 {
-	simple();
-	except();
+	Shrubbery();
 	return 0;
 }

@@ -6,7 +6,7 @@
 #    By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/18 13:56:52 by yrabby            #+#    #+#              #
-#    Updated: 2023/06/14 15:26:50 by yrabby           ###   ########.fr        #
+#    Updated: 2023/06/15 11:23:17 by yrabby           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME 					= test
 
 # class
 CLASS_DIR				= .
-CLASS_NAME				= Bureaucrat Form
+CLASS_NAME				= Bureaucrat AForm ShrubberyCreationForm
 
 # other src
 OTHER_SRC				= 
