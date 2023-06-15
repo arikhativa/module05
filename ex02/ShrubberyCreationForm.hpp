@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/15 10:57:51 by yrabby            #+#    #+#             */
-/*   Updated: 2023/06/15 11:35:02 by yrabby           ###   ########.fr       */
+/*   Updated: 2023/06/15 11:44:52 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ class ShrubberyCreationForm : public AForm
 	public:
 		ShrubberyCreationForm();
 		virtual ~ShrubberyCreationForm();
+	
 		virtual void		execute(Bureaucrat const & executor) const;
 
 	private:

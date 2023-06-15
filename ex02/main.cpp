@@ -6,13 +6,13 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/12 10:45:46 by yrabby            #+#    #+#             */
-/*   Updated: 2023/06/15 11:40:13 by yrabby           ###   ########.fr       */
+/*   Updated: 2023/06/15 12:24:19 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-#include "AForm.hpp"
 #include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
 
 void	Shrubbery()
 {
@@ -39,8 +39,23 @@ void	Shrubbery()
 	}
 }
 
+void	Robotomy()
+{
+	{
+		Bureaucrat	b1("Bob[1]", 1);
+		RobotomyRequestForm f1;
+
+		std::cout << f1 << std::endl;
+		std::cout << b1 << std::endl;
+		b1.signForm(f1);
+		b1.executeForm(f1);
+	}
+}
+
+
 int main( void )
 {
-	Shrubbery();
+	// Shrubbery();
+	Robotomy();
 	return 0;
 }
