@@ -1,24 +1,36 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   PresidentialPardonForm.hpp                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/06/17 10:29:40 by yrabby            #+#    #+#             */
+/*   Updated: 2023/06/17 10:43:58 by yrabby           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef PRESIDENTIALPARDONFORM_HPP
 # define PRESIDENTIALPARDONFORM_HPP
 
 # include <iostream>
 # include <string>
 
-class PresidentialPardonForm
+# include "AForm.hpp"
+
+class PresidentialPardonForm : public AForm
 {
 
 	public:
+		explicit PresidentialPardonForm(const std::string &target);
+		virtual ~PresidentialPardonForm();
 
-		PresidentialPardonForm();
-		PresidentialPardonForm( PresidentialPardonForm const & src );
-		~PresidentialPardonForm();
-
-		PresidentialPardonForm &		operator=( PresidentialPardonForm const & rhs );
+		virtual void		execute(Bureaucrat const & executor) const;
 
 	private:
+		PresidentialPardonForm( PresidentialPardonForm const & src );
+		PresidentialPardonForm &		operator=( PresidentialPardonForm const & rhs );
 
 };
-
-std::ostream &			operator<<( std::ostream & o, PresidentialPardonForm const & i );
 
 #endif /* ****************************************** PRESIDENTIALPARDONFORM_H */

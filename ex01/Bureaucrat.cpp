@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 15:06:36 by yrabby            #+#    #+#             */
-/*   Updated: 2023/06/14 15:35:43 by yrabby           ###   ########.fr       */
+/*   Updated: 2023/06/14 16:52:26 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ Bureaucrat &				Bureaucrat::operator=( Bureaucrat const & rhs )
 
 std::ostream &			operator<<( std::ostream & o, Bureaucrat const & i )
 {
-	o << i.getName() << ", bureaucrat grade " << i.getGrade();
+	o << i.getName() << ", bureaucrat grade " << i.getGrade()	;
 	return o;
 }
 

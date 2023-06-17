@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/15 09:33:49 by yrabby            #+#    #+#             */
-/*   Updated: 2023/06/15 09:56:34 by yrabby           ###   ########.fr       */
+/*   Updated: 2023/06/17 10:43:35 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,10 @@ class Bureaucrat;
 class AForm
 {
 	public:
-		explicit AForm(const std::string &name, int gradeToSign, int gradeToExecute);
+		explicit AForm(const std::string &name, int gradeToSign, int gradeToExecute, const std::string &target);
 		virtual ~AForm();
 
+		const std::string	&getTarget(void) const;
 		const std::string	&getName(void) const;
 		bool				getSigned(void) const;
 		int					getGradeToSign(void) const;
@@ -66,6 +67,7 @@ class AForm
 		bool				_signed;
 		const int			_gradeToSign;
 		const int			_gradeToExecute;
+		const std::string	_target;
 
 
 };

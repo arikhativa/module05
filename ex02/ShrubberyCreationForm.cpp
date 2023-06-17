@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/15 11:17:00 by yrabby            #+#    #+#             */
-/*   Updated: 2023/06/15 11:36:10 by yrabby           ###   ########.fr       */
+/*   Updated: 2023/06/17 10:44:43 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,13 @@
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-ShrubberyCreationForm::ShrubberyCreationForm()
-	:	AForm("ShrubberyCreationForm", 145, 137)
+ShrubberyCreationForm::ShrubberyCreationForm(const std::string &target)
+	:	AForm("ShrubberyCreationForm", 145, 137, target)
 {
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm( const ShrubberyCreationForm & src )
-	:	AForm("ShrubberyCreationForm", 145, 137)
+	:	AForm("ShrubberyCreationForm", 145, 137, "")
 {
 	(void)src;
 }
@@ -85,7 +85,7 @@ void		ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 {
 	_canExecForm(executor);
 
-	std::string file_name(executor.getName() + "_shrubbery");
+	std::string file_name(this->getTarget() + "_shrubbery");
 	try
 	{
 		std::ofstream MyFile(file_name.c_str());

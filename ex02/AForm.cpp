@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/15 09:33:53 by yrabby            #+#    #+#             */
-/*   Updated: 2023/06/15 11:24:25 by yrabby           ###   ########.fr       */
+/*   Updated: 2023/06/17 10:44:02 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,12 @@
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-AForm::AForm(const std::string &name, int gradeToSign, int gradeToExecute)
+AForm::AForm(const std::string &name, int gradeToSign, int gradeToExecute, const std::string &target)
 	:	_name(name), 
 		_signed(false),
 		_gradeToSign(gradeToSign),
-		_gradeToExecute(gradeToExecute)
+		_gradeToExecute(gradeToExecute),
+		_target(target)
 {
 	_checkGrade(_gradeToSign);
 	_checkGrade(_gradeToExecute);
@@ -117,6 +118,11 @@ void	AForm::_checkGrade(int grade) const
 ** --------------------------------- ACCESSOR ---------------------------------
 */
 
+
+const std::string	&AForm::getTarget(void) const
+{
+	return _target;
+}
 
 const std::string	&AForm::getName(void) const
 {

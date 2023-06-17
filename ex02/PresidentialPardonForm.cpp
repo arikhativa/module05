@@ -4,12 +4,15 @@
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-PresidentialPardonForm::PresidentialPardonForm()
+PresidentialPardonForm::PresidentialPardonForm(const std::string &target)
+	:	AForm("PresidentialPardonForm", 25, 5, target)
 {
 }
 
 PresidentialPardonForm::PresidentialPardonForm( const PresidentialPardonForm & src )
+	:	AForm("PresidentialPardonForm", 25, 5, "")
 {
+	(void)src;
 }
 
 
@@ -28,23 +31,18 @@ PresidentialPardonForm::~PresidentialPardonForm()
 
 PresidentialPardonForm &				PresidentialPardonForm::operator=( PresidentialPardonForm const & rhs )
 {
-	//if ( this != &rhs )
-	//{
-		//this->_value = rhs.getValue();
-	//}
+	(void)rhs;
 	return *this;
 }
-
-std::ostream &			operator<<( std::ostream & o, PresidentialPardonForm const & i )
-{
-	//o << "Value = " << i.getValue();
-	return o;
-}
-
 
 /*
 ** --------------------------------- METHODS ----------------------------------
 */
+void		PresidentialPardonForm::execute(Bureaucrat const & executor) const
+{
+	_canExecForm(executor);
+	std::cout << this->getTarget() << " has been pardoned by Zafod Beeblebrox." << std::endl;
+}
 
 
 /*

@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/15 11:44:16 by yrabby            #+#    #+#             */
-/*   Updated: 2023/06/15 12:21:05 by yrabby           ###   ########.fr       */
+/*   Updated: 2023/06/17 10:39:21 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class RobotomyRequestForm : public AForm
 {
 
 	public:
-		RobotomyRequestForm();
+		explicit RobotomyRequestForm(const std::string &target);
 		virtual ~RobotomyRequestForm();
 
 		virtual void		execute(Bureaucrat const & executor) const;

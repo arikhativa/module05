@@ -6,7 +6,7 @@
 #    By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/18 13:56:52 by yrabby            #+#    #+#              #
-#    Updated: 2023/06/15 11:59:12 by yrabby           ###   ########.fr        #
+#    Updated: 2023/06/17 10:46:16 by yrabby           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME 					= test
 
 # class
 CLASS_DIR				= .
-CLASS_NAME				= Bureaucrat AForm ShrubberyCreationForm RobotomyRequestForm
+CLASS_NAME				= Bureaucrat AForm ShrubberyCreationForm RobotomyRequestForm PresidentialPardonForm
 
 # other src
 OTHER_SRC				= 

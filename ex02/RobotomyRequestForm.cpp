@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/15 11:45:07 by yrabby            #+#    #+#             */
-/*   Updated: 2023/06/15 12:23:19 by yrabby           ###   ########.fr       */
+/*   Updated: 2023/06/17 10:45:01 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,13 @@
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-RobotomyRequestForm::RobotomyRequestForm()
-	:	AForm("RobotomyRequestForm", 72, 45)
+RobotomyRequestForm::RobotomyRequestForm(const std::string &target)
+	:	AForm("RobotomyRequestForm", 72, 45, target)
 {
 }
 
 RobotomyRequestForm::RobotomyRequestForm( const RobotomyRequestForm & src )
-	:	AForm("RobotomyRequestForm", 72, 45)
+	:	AForm("RobotomyRequestForm", 72, 45, "")
 {
 	(void)src;
 }
@@ -88,7 +88,7 @@ void		RobotomyRequestForm::execute(Bureaucrat const & executor) const
 	std::srand(std::time(NULL));
 	int num = std::rand() % 2;
 	if (num == 0)
-		std::cout << executor.getName() << " has been robotomized successfully" << std::endl;
+		std::cout << this->getTarget() << " has been robotomized successfully" << std::endl;
 	else
 		std::cout << "the robotomy failed" << std::endl;
 }
