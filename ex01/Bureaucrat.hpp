@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 15:29:00 by yrabby            #+#    #+#             */
-/*   Updated: 2023/10/02 11:11:29 by yrabby           ###   ########.fr       */
+/*   Updated: 2023/10/02 11:18:21 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@
 #include <string>
 #include <exception>
 
-#include "Form.hpp"
 
-// class Form;
+class Form;
+
 class Bureaucrat
 {
 public:
@@ -28,6 +28,8 @@ public:
 
 	const std::string &getName(void) const;
 	int getGrade(void) const;
+
+	void signForm(Form &form) const;
 
 	void incrementGrade(void);
 	void decrementGrade(void);
@@ -56,6 +58,8 @@ private:
 	const std::string _name;
 	int _grade;
 };
+
+#include "Form.hpp"
 
 std::ostream &operator<<(std::ostream &o, Bureaucrat const &i);
 
