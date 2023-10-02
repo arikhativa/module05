@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Form.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/10/02 11:11:33 by yrabby            #+#    #+#             */
+/*   Updated: 2023/10/02 11:11:35 by yrabby           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Form.hpp"
 
 /*
@@ -5,27 +17,27 @@
 */
 Form::Form(const std::string &name, int gradeToSign, int gradeToExecute)
 	:	_name(name), 
-		_signed(false),
-		_gradeToSign(gradeToSign),
-		_gradeToExecute(gradeToExecute)
+		_is_signed(false),
+		_grade_to_sign(gradeToSign),
+		_grade_to_execute(gradeToExecute)
 {
-	_checkGrade(_gradeToSign);
-	_checkGrade(_gradeToExecute);
+	_checkGrade(_grade_to_sign);
+	_checkGrade(_grade_to_execute);
 }
 
 Form::Form()
 	:	_name("default"), 
-		_signed(false),
-		_gradeToSign(150),
-		_gradeToExecute(150)
+		_is_signed(false),
+		_grade_to_sign(150),
+		_grade_to_execute(150)
 {
 }
 
 Form::Form( const Form & src )
 	:	_name(src._name), 
-		_signed(src._signed),
-		_gradeToSign(src._gradeToSign),
-		_gradeToExecute(src._gradeToExecute)
+		_is_signed(src._is_signed),
+		_grade_to_sign(src._grade_to_sign),
+		_grade_to_execute(src._grade_to_execute)
 {
 }
 
@@ -52,7 +64,7 @@ Form &				Form::operator=( Form const & rhs )
 std::ostream &			operator<<( std::ostream & o, Form const & i )
 {
 	o << "Form \"" << i.getName() << "\" [ "
-		<< "signed: " << i.getSigned() << ", " 
+		<< "signed: " << i.isSigned() << ", " 
 		<< "grade to sign: " << i.getGradeToSign() << ", "
 		<< "grade to execute: " << i.getGradeToExecute() << " ]";
 	return o;
@@ -74,9 +86,9 @@ const char* Form::GradeTooLowException::what() const throw()
 
 void				Form::beSigned(const Bureaucrat &bureaucrat)
 {
-	if (bureaucrat.getGrade() > _gradeToSign)
+	if (bureaucrat.getGrade() > _grade_to_sign)
 		throw GradeTooLowException();
-	_signed = true;
+	_is_signed = true;
 }
 
 void	Form::_checkGrade(int grade) const
@@ -97,19 +109,19 @@ const std::string	&Form::getName(void) const
 	return _name;
 }
 
-bool					Form::getSigned(void) const
+bool					Form::isSigned(void) const
 {
-	return _signed;
+	return _is_signed;
 }
 
 int					Form::getGradeToSign(void) const
 {
-	return _gradeToSign;
+	return _grade_to_sign;
 }
 
 int					Form::getGradeToExecute(void) const
 {
-	return _gradeToExecute;
+	return _grade_to_execute;
 }
 
 

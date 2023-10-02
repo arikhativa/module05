@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/10/02 11:11:19 by yrabby            #+#    #+#             */
+/*   Updated: 2023/10/02 11:11:20 by yrabby           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef BUREAUCRAT_HPP
 #define BUREAUCRAT_HPP
 
@@ -8,7 +20,7 @@
 class Bureaucrat
 {
 public:
-	explicit Bureaucrat(const std::string &name, int grade);
+	Bureaucrat(const std::string &name, int grade);
 	Bureaucrat(Bureaucrat const &src);
 	~Bureaucrat();
 
@@ -16,6 +28,7 @@ public:
 
 	const std::string &getName(void) const;
 	int getGrade(void) const;
+
 	void incrementGrade(void);
 	void decrementGrade(void);
 

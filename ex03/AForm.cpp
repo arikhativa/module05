@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/15 09:33:53 by yrabby            #+#    #+#             */
-/*   Updated: 2023/06/17 10:56:22 by yrabby           ###   ########.fr       */
+/*   Updated: 2023/10/02 11:10:16 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 AForm::AForm(const std::string &name, int grade_to_sign, int grade_to_execute, const std::string &target)
 	:	_name(name), 
-		_signed(false),
+		_is_signed(false),
 		_grade_to_sign(grade_to_sign),
 		_grade_to_execute(grade_to_execute),
 		_target(target)
@@ -29,7 +29,7 @@ AForm::AForm(const std::string &name, int grade_to_sign, int grade_to_execute, c
 
 AForm::AForm()
 	:	_name("default"), 
-		_signed(false),
+		_is_signed(false),
 		_grade_to_sign(150),
 		_grade_to_execute(150)
 {
@@ -37,7 +37,7 @@ AForm::AForm()
 
 AForm::AForm( const AForm & src )
 	:	_name(src._name), 
-		_signed(src._signed),
+		_is_signed(src._is_signed),
 		_grade_to_sign(src._grade_to_sign),
 		_grade_to_execute(src._grade_to_execute)
 {
@@ -66,7 +66,7 @@ AForm &				AForm::operator=( AForm const & rhs )
 std::ostream &			operator<<( std::ostream & o, AForm const & i )
 {
 	o << "AForm \"" << i.getName() << "\" [ "
-		<< "signed: " << i.getSigned() << ", " 
+		<< "signed: " << i.isSigned() << ", " 
 		<< "grade to sign: " << i.getGradeToSign() << ", "
 		<< "grade to execute: " << i.getGradeToExecute() << " ]";
 	return o;
@@ -95,14 +95,14 @@ void				AForm::beSigned(const Bureaucrat &bureaucrat)
 {
 	if (bureaucrat.getGrade() > _grade_to_sign)
 		throw GradeTooLowException();
-	_signed = true;
+	_is_signed = true;
 }
 
 void	AForm::_canExecForm(const Bureaucrat &bureaucrat) const
 {
 	if (bureaucrat.getGrade() > getGradeToExecute())
 		throw GradeTooLowException();
-	if (!getSigned())
+	if (!isSigned())
 		throw FormNotSignedException();
 }
 
@@ -129,9 +129,9 @@ const std::string	&AForm::getName(void) const
 	return _name;
 }
 
-bool					AForm::getSigned(void) const
+bool					AForm::isSigned(void) const
 {
-	return _signed;
+	return _is_signed;
 }
 
 int					AForm::getGradeToSign(void) const

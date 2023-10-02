@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 15:06:36 by yrabby            #+#    #+#             */
-/*   Updated: 2023/10/02 11:03:49 by yrabby           ###   ########.fr       */
+/*   Updated: 2023/10/02 11:11:27 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,6 +84,15 @@ void Bureaucrat::signForm(Form &form) const
 		std::cout << _name << " couldn't sign " << form.getName() << " because " << e.what() << std::endl;
 	}
 }
+// const std::string &Bureaucrat::getName(void) const
+// {
+// 	return _name;
+// }
+
+// int Bureaucrat::getGrade(void) const
+// {
+// 	return _grade;
+// }
 
 void Bureaucrat::incrementGrade(void)
 {

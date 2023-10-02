@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/15 09:33:49 by yrabby            #+#    #+#             */
-/*   Updated: 2023/06/17 10:56:22 by yrabby           ###   ########.fr       */
+/*   Updated: 2023/10/02 11:10:16 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ class AForm
 
 		const std::string	&getTarget(void) const;
 		const std::string	&getName(void) const;
-		bool				getSigned(void) const;
+		bool				isSigned(void) const;
 		int					getGradeToSign(void) const;
 		int					getGradeToExecute(void) const;
 		void				beSigned(const Bureaucrat &bureaucrat);
@@ -65,7 +65,7 @@ class AForm
 		static const int	_MIN_GRADE = 150;
 
 		const std::string	_name;
-		bool				_signed;
+		bool				_is_signed;
 		const int			_grade_to_sign;
 		const int			_grade_to_execute;
 		const std::string	_target;
