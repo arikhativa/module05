@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/12 10:45:46 by yrabby            #+#    #+#             */
-/*   Updated: 2023/10/02 12:17:44 by yrabby           ###   ########.fr       */
+/*   Updated: 2023/10/02 12:26:55 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,11 @@ void subject()
 		AForm *rrf;
 
 		rrf = someRandomIntern.makeForm("robotomy request", "Bender");
+
+		Bureaucrat b("Berger", 1);
+		b.signForm(*rrf);
+		rrf->execute(b);
+
 		delete rrf;
 	}
 }
@@ -33,7 +38,7 @@ void intern()
 		Intern i;
 		AForm *f1;
 
-		f1 = i.makeForm(Intern::PRESIDENTIAL_PARDON, "pepe]");
+		f1 = i.makeForm(Intern::PRESIDENTIAL_PARDON, "yoyo");
 		std::cout << *f1 << std::endl;
 		delete f1;
 		f1 = i.makeForm(Intern::ROBOTOMY_REQUEST, "mimi");
@@ -54,7 +59,7 @@ void intern()
 
 int main(void)
 {
-	// subject();
+	subject();
 	intern();
 	return 0;
 }

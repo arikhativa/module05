@@ -6,15 +6,15 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/17 11:30:52 by yrabby            #+#    #+#             */
-/*   Updated: 2023/10/02 12:17:34 by yrabby           ###   ########.fr       */
+/*   Updated: 2023/10/02 12:22:16 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Intern.hpp"
 
-const std::string Intern::PRESIDENTIAL_PARDON = "presidential pardon";
-const std::string Intern::ROBOTOMY_REQUEST = "robotomy request";
-const std::string Intern::SHRUBBERY_CREATION = "shrubbery creation";
+const std::string Intern::PRESIDENTIAL_PARDON("presidential pardon");
+const std::string Intern::ROBOTOMY_REQUEST("robotomy request");
+const std::string Intern::SHRUBBERY_CREATION("shrubbery creation");
 
 /*
 ** ------------------------------- CONSTRUCTOR --------------------------------
