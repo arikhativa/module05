@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/15 09:33:49 by yrabby            #+#    #+#             */
-/*   Updated: 2023/10/02 11:10:16 by yrabby           ###   ########.fr       */
+/*   Updated: 2023/10/02 11:33:39 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 # include "Bureaucrat.hpp"
 
 class Bureaucrat;
-// TODO make sure all vars are in this case: grade_to_sign and not gradeToSign in all execs
+// TODO make sure all vars are in this case: grade_to_sign and not grade_to_sign in all execs
 
 class AForm
 {

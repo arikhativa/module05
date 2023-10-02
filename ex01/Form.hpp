@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 11:11:13 by yrabby            #+#    #+#             */
-/*   Updated: 2023/10/02 11:11:40 by yrabby           ###   ########.fr       */
+/*   Updated: 2023/10/02 11:35:12 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class Bureaucrat;
 class Form
 {
 public:
-	Form(const std::string &name, int gradeToSign, int gradeToExecute);
+	Form(const std::string &name, int grade_to_sign, int grade_to_execute);
 	~Form();
 
 	const std::string &getName(void) const;

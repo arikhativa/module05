@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 11:11:33 by yrabby            #+#    #+#             */
-/*   Updated: 2023/10/02 11:14:16 by yrabby           ###   ########.fr       */
+/*   Updated: 2023/10/02 11:33:54 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,11 @@
 /*
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
-Form::Form(const std::string &name, int gradeToSign, int gradeToExecute)
+Form::Form(const std::string &name, int grade_to_sign, int grade_to_execute)
 	: _name(name),
 	  _is_signed(false),
-	  _grade_to_sign(gradeToSign),
-	  _grade_to_execute(gradeToExecute)
+	  _grade_to_sign(grade_to_sign),
+	  _grade_to_execute(grade_to_execute)
 {
 	_checkGrade(_grade_to_sign);
 	_checkGrade(_grade_to_execute);
