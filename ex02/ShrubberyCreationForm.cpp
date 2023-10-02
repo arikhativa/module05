@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/15 11:17:00 by yrabby            #+#    #+#             */
-/*   Updated: 2023/10/02 11:28:44 by yrabby           ###   ########.fr       */
+/*   Updated: 2023/10/02 11:48:24 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,12 @@
 */
 
 ShrubberyCreationForm::ShrubberyCreationForm(const std::string &target)
-	:	AForm("ShrubberyCreationForm", 145, 137, target)
+	: AForm("ShrubberyCreationForm", 145, 137, target)
 {
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm( const ShrubberyCreationForm & src )
-	:	AForm("ShrubberyCreationForm", 145, 137, "")
+ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &src)
+	: AForm("ShrubberyCreationForm", 145, 137, "")
 {
 	(void)src;
 }
@@ -39,7 +39,7 @@ ShrubberyCreationForm::~ShrubberyCreationForm()
 ** --------------------------------- OVERLOAD ---------------------------------
 */
 
-ShrubberyCreationForm &				ShrubberyCreationForm::operator=( ShrubberyCreationForm const & rhs )
+ShrubberyCreationForm &ShrubberyCreationForm::operator=(ShrubberyCreationForm const &rhs)
 {
 	(void)rhs;
 	return *this;
@@ -49,7 +49,7 @@ ShrubberyCreationForm &				ShrubberyCreationForm::operator=( ShrubberyCreationFo
 ** --------------------------------- METHODS ----------------------------------
 */
 
-std::string	ShrubberyCreationForm::_getTree(void) const
+std::string ShrubberyCreationForm::_getTree(void) const
 {
 	return "	                                                         .\n\
                                               .         ;  \n\
@@ -81,27 +81,24 @@ std::string	ShrubberyCreationForm::_getTree(void) const
                           ...;%@@@@@%%:;;;;,.. ";
 }
 
-void		ShrubberyCreationForm::execute(Bureaucrat const & executor) const
+void ShrubberyCreationForm::execute(Bureaucrat const &executor) const
 {
 	_canExecForm(executor);
 
 	std::string file_name(this->getTarget() + "_shrubbery");
-	try
-	{
-		std::ofstream MyFile(file_name.c_str());
+	std::ofstream file(file_name.c_str());
 
-		MyFile << _getTree() << std::endl;
-		MyFile.close();
-	}
-	catch(const std::exception& e)
+	if (!file.is_open())
 	{
-		std::cerr << e.what() << '\n';
+		std::cerr << "ShrubberyCreationForm: can't open file." << std::endl;
+		return;
 	}
+	file << _getTree() << std::endl;
+	file.close();
 }
 
 /*
 ** --------------------------------- ACCESSOR ---------------------------------
 */
-
 
 /* ************************************************************************** */

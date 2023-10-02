@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/15 11:45:07 by yrabby            #+#    #+#             */
-/*   Updated: 2023/06/17 10:45:01 by yrabby           ###   ########.fr       */
+/*   Updated: 2023/10/02 11:42:50 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ void	clearDisplay(const std::string &s)
 	std::cout << std::flush;
 }
 
-void	writeDispaly(const std::string &s)
+void	writeDisplay(const std::string &s)
 {
 	std::cout << s << std::flush;
 }
@@ -74,13 +74,13 @@ void		RobotomyRequestForm::execute(Bureaucrat const & executor) const
 
 	for (int i = 0; i < 3; ++i)
 	{
-		writeDispaly(s1);
+		writeDisplay(s1);
 		clearDisplay(s1);
 		usleep(200000);
-		writeDispaly(s2);
+		writeDisplay(s2);
 		clearDisplay(s2);
 		usleep(200000);
-		writeDispaly(s3);
+		writeDisplay(s3);
 		clearDisplay(s3);
 		usleep(200000);
 	}

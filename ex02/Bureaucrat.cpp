@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 15:06:36 by yrabby            #+#    #+#             */
-/*   Updated: 2023/10/02 11:30:53 by yrabby           ###   ########.fr       */
+/*   Updated: 2023/10/02 11:47:25 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,6 +99,10 @@ void Bureaucrat::executeForm(AForm const &form) const
 	catch (const AForm::FormNotSignedException &e)
 	{
 		std::cerr << _name << " couldn't execute " << form.getName() << " because " << e.what() << std::endl;
+	}
+	catch (const std::exception &e)
+	{
+		std::cerr << _name << " couldn't execute " << form.getName() << " because of an unexpected error: " << e.what() << std::endl;
 	}
 }
 

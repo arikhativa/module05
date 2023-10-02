@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/12 10:45:46 by yrabby            #+#    #+#             */
-/*   Updated: 2023/10/02 11:28:25 by yrabby           ###   ########.fr       */
+/*   Updated: 2023/10/02 11:52:01 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,12 @@
 #include "PresidentialPardonForm.hpp"
 #include "RobotomyRequestForm.hpp"
 
-void	Shrubbery()
+void Shrubbery()
 {
 	{
-		Bureaucrat	b1("Bob[1]", 1);
-		Bureaucrat	b2("Yoni[150]", 150);
-		Bureaucrat	b3("Oded[145]", 145);
+		Bureaucrat b1("Bob[1]", 1);
+		Bureaucrat b2("Yoni[150]", 150);
+		Bureaucrat b3("Oded[145]", 145);
 		ShrubberyCreationForm f1("home");
 
 		std::cout << f1 << std::endl;
@@ -40,10 +40,10 @@ void	Shrubbery()
 	}
 }
 
-void	Robotomy()
+void Robotomy()
 {
 	{
-		Bureaucrat	b1("Bob[1]", 1);
+		Bureaucrat b1("Bob[1]", 1);
 		RobotomyRequestForm f1("Jack");
 
 		std::cout << f1 << std::endl;
@@ -51,8 +51,8 @@ void	Robotomy()
 		b1.signForm(f1);
 		b1.executeForm(f1);
 		{
-			Bureaucrat	b2("Yoni[73]", 73);
-			Bureaucrat	b3("Oded[72]", 72);
+			Bureaucrat b2("Yoni[73]", 73);
+			Bureaucrat b3("Oded[72]", 72);
 			b2.signForm(f1);
 			b2.executeForm(f1);
 			b3.signForm(f1);
@@ -61,10 +61,10 @@ void	Robotomy()
 	}
 }
 
-void	President()
+void President()
 {
 	{
-		Bureaucrat	b1("Bob[1]", 1);
+		Bureaucrat b1("Bob[1]", 1);
 		PresidentialPardonForm f1("Mordi");
 
 		std::cout << f1 << std::endl;
@@ -74,7 +74,7 @@ void	President()
 	}
 }
 
-int main( void )
+int main(void)
 {
 	// Shrubbery();
 	Robotomy();
