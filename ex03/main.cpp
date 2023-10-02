@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/12 10:45:46 by yrabby            #+#    #+#             */
-/*   Updated: 2023/06/17 11:41:22 by yrabby           ###   ########.fr       */
+/*   Updated: 2023/10/02 12:17:44 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,23 +16,23 @@
 #include "PresidentialPardonForm.hpp"
 #include "RobotomyRequestForm.hpp"
 
-void	subject()
+void subject()
 {
 	{
 		Intern someRandomIntern;
-		AForm* rrf;
+		AForm *rrf;
 
 		rrf = someRandomIntern.makeForm("robotomy request", "Bender");
 		delete rrf;
 	}
 }
 
-void	intern()
+void intern()
 {
 	{
-		Intern	i;
-		AForm	*f1;
-	
+		Intern i;
+		AForm *f1;
+
 		f1 = i.makeForm(Intern::PRESIDENTIAL_PARDON, "pepe]");
 		std::cout << *f1 << std::endl;
 		delete f1;
@@ -43,16 +43,16 @@ void	intern()
 		std::cout << *f1 << std::endl;
 		delete f1;
 
-		std::cout << std::endl << "\t - Test: Wrong form name" << std::endl;
+		std::cout << std::endl
+				  << "\t - Test: Wrong form name" << std::endl;
 
 		f1 = i.makeForm("asd", "lulu");
 		if (!f1)
 			std::cout << "returned NULL" << std::endl;
 	}
-
 }
 
-int main( void )
+int main(void)
 {
 	// subject();
 	intern();

@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/02 11:12:27 by yrabby            #+#    #+#             */
-/*   Updated: 2023/10/02 11:12:28 by yrabby           ###   ########.fr       */
+/*   Created: 2023/10/02 11:11:55 by yrabby            #+#    #+#             */
+/*   Updated: 2023/10/02 11:44:59 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,16 +17,15 @@
 */
 
 PresidentialPardonForm::PresidentialPardonForm(const std::string &target)
-	:	AForm("PresidentialPardonForm", 25, 5, target)
+	: AForm("PresidentialPardonForm", 25, 5, target)
 {
 }
 
-PresidentialPardonForm::PresidentialPardonForm( const PresidentialPardonForm & src )
-	:	AForm("PresidentialPardonForm", 25, 5, "")
+PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &src)
+	: AForm("PresidentialPardonForm", 25, 5, "")
 {
 	(void)src;
 }
-
 
 /*
 ** -------------------------------- DESTRUCTOR --------------------------------
@@ -36,12 +35,11 @@ PresidentialPardonForm::~PresidentialPardonForm()
 {
 }
 
-
 /*
 ** --------------------------------- OVERLOAD ---------------------------------
 */
 
-PresidentialPardonForm &				PresidentialPardonForm::operator=( PresidentialPardonForm const & rhs )
+PresidentialPardonForm &PresidentialPardonForm::operator=(PresidentialPardonForm const &rhs)
 {
 	(void)rhs;
 	return *this;
@@ -50,16 +48,14 @@ PresidentialPardonForm &				PresidentialPardonForm::operator=( PresidentialPardo
 /*
 ** --------------------------------- METHODS ----------------------------------
 */
-void		PresidentialPardonForm::execute(Bureaucrat const & executor) const
+void PresidentialPardonForm::execute(Bureaucrat const &executor) const
 {
 	_canExecForm(executor);
-	std::cout << this->getTarget() << " has been pardoned by Zafod Beeblebrox." << std::endl;
+	std::cout << this->getTarget() << " has been pardoned by Zaphod Beeblebrox." << std::endl;
 }
-
 
 /*
 ** --------------------------------- ACCESSOR ---------------------------------
 */
-
 
 /* ************************************************************************** */
